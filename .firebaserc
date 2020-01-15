@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "word-everyday"
+  },
+  "targets": {
+    "word-everyday-2e27e": {
+      "hosting": {
+        "dashboard": [
+          "dashboard-word"
+        ]
+      }
+    }
+  }
+}
