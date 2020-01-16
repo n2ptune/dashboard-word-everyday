@@ -1,5 +1,6 @@
 <template>
-  <div class="root">
-    asdf
+  <div class="bg-gray-200 h-screen">
+    Root
+    <router-view />
   </div>
 </template>
