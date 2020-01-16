@@ -1,5 +1,5 @@
 <template>
-  <div class="root">
-    asdf
+  <div>
+    home
   </div>
 </template>

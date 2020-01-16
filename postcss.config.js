@@ -1,7 +1,19 @@
+const tailwindcss = require('tailwindcss')
+const cssnano = require('cssnano')({ preset: 'default' })
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  content: ['./public/**/*.html', './src/**/*.vue'],
+  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+  whitelistPatterns: [
+    /-(leave|enter|appear)(|-(to|from|active))$/,
+    /^(?!(|.*?:)cursor-move).+-move$/,
+    /^router-link(|-exact)-active$/
+  ]
+})
+
 module.exports = {
-  // plugins: [
-  //   require('cssnano')({
-  //     preset: 'default'
-  //   })
-  // ]
+  plugins: [
+    tailwindcss,
+    ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
+    cssnano
+  ]
 }
