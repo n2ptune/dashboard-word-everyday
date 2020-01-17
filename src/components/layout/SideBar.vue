@@ -8,13 +8,12 @@
         <li
           v-for="route in routes"
           :key="route.title"
-          class="route-li hover:bg-gray-700 text-gray-100 cursor-pointer my-2"
+          class="bg-transparent hover:bg-gray-700 cursor-pointer my-2"
         >
           <router-link
             :to="route.to"
-            active-class="active"
-            exact-active-class="exact-active"
-            class="route block py-2 px-4"
+            :style="{ textDecoration: 'none' }"
+            class="route block py-2 px-4 text-gray-100"
           >
             <font-awesome-icon
               v-if="route.icon"
@@ -51,8 +50,8 @@ export default {
 </script>
 
 <style scoped>
-.route.acitve,
-.route.exact-active {
+.route.router-link-acitve,
+.route.router-link-exact-active {
   @apply text-green-400;
 }
 </style>

@@ -1,7 +1,7 @@
 const tailwindcss = require('tailwindcss')
 const cssnano = require('cssnano')({ preset: 'default' })
 const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: ['./public/**/*.html', './src/**/*.vue'],
+  content: ['./public/index.html', './src/**/*.vue', './src/**/*.js'],
   defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
   whitelistPatterns: [
     /-(leave|enter|appear)(|-(to|from|active))$/,
