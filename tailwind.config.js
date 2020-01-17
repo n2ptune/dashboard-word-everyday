@@ -1,6 +1,16 @@
 module.exports = {
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        display: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Noto Sans"',
+          '"Noto Sans KR"',
+          'sans-serif'
+        ]
+      }
+    }
   },
   variants: {},
   plugins: []
