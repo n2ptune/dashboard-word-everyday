@@ -1,7 +1,7 @@
 <template>
   <div>
     <DefaultRouterStyle>
-      Home
+      Word
     </DefaultRouterStyle>
   </div>
 </template>

@@ -9,6 +9,9 @@ module.exports = {
           '"Noto Sans KR"',
           'sans-serif'
         ]
+      },
+      margin: {
+        '60': '15rem'
       }
     }
   },

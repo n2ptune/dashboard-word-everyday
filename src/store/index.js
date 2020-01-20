@@ -4,8 +4,14 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    isViewSidebar: true
+  },
+  mutations: {
+    handleViewSidebar(state) {
+      state.isViewSidebar = !state.isViewSidebar
+    }
+  },
   actions: {},
   modules: {}
 })
