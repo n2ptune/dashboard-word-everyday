@@ -7,11 +7,15 @@ import '@/assets/style/index.css'
 
 // Font-Awesome Icons
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import {
+  faUsersCog,
+  faArrowLeft,
+  faArrowRight
+} from '@fortawesome/free-solid-svg-icons'
+import { faElementor } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(fas, fab)
+library.add(faUsersCog, faElementor, faArrowLeft, faArrowRight)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
