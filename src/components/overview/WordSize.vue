@@ -35,7 +35,8 @@ export default {
       this.handler = true
       this.wordSize = data.count
     } catch (e) {
-      console.error(e)
+      // console.error(e)
+      // @TODO Error handle
     }
   }
 }
