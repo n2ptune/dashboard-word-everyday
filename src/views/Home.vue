@@ -2,6 +2,7 @@
   <div>
     <DefaultRouterStyle>
       <WordSize />
+      <WordSize type="used" />
     </DefaultRouterStyle>
   </div>
 </template>

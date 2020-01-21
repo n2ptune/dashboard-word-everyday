@@ -1,5 +1,5 @@
 <template>
-  <div v-if="handler">
+  <div class="flex h-full items-center justify-center" v-if="handler">
     <loading-circle />
   </div>
 </template>

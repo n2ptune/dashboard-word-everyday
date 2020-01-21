@@ -1,6 +1,10 @@
 <template>
-  <Content :title="'Word Size'" :handler="!handler" class="w-56 h-32">
-    <ContentLoading class="m-auto" :handler="!handler" />
+  <Content
+    :title="type === 'used' ? 'Used Word Size' : 'Word Size'"
+    :handler="!handler"
+    class="w-56 h-32"
+  >
+    <ContentLoading :handler="!handler" />
     <div class="flex h-full items-center pb-6" v-if="handler">
       <div class="mx-auto text-xl font-bold">{{ wordSizeWithComma }}개</div>
     </div>
@@ -18,6 +22,7 @@ export default {
       wordSize: 0
     }
   },
+  props: ['type'],
   computed: {
     wordSizeWithComma() {
       return numberComma(this.wordSize)
@@ -29,7 +34,9 @@ export default {
   },
   async created() {
     try {
-      const { data } = await this.axios.get('/management/count', {
+      const url =
+        this.type === 'used' ? '/management/used-count' : 'management/count'
+      const { data } = await this.axios.get(url, {
         baseURL: base.url
       })
       this.handler = true
