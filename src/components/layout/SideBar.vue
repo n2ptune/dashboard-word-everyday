@@ -53,7 +53,7 @@ export default {
     return {
       routes: [
         {
-          title: 'Home',
+          title: 'Overview',
           to: '/',
           icon: ['fab', 'elementor']
         },

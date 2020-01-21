@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed flex items-center ml-0 md:ml-56 top-0 shadow-lg bg-white w-full h-12 flex-wrap flex-column"
+    class="fixed flex items-center ml-0 md:ml-56 top-0 shadow bg-white w-full h-12 flex-wrap flex-column"
     :class="isViewSidebar ? '' : 'ml-f0'"
   >
     <div class="px-3">
@@ -11,9 +11,7 @@
       />
     </div>
     <div class="text-gray-600 text-lg">Dashboard Word-Everyday</div>
-    <div class="ml-auto" :class="isViewSidebar ? 'mr-60' : 'mr-2'">
-      asdasfasf
-    </div>
+    <div class="ml-auto" :class="isViewSidebar ? 'mr-60' : 'mr-2'"></div>
   </div>
 </template>
 
