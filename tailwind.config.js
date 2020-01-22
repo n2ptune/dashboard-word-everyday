@@ -12,6 +12,11 @@ module.exports = {
       },
       margin: {
         '60': '15rem'
+      },
+      spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '96': '24rem'
       }
     }
   },

@@ -14,6 +14,7 @@
 <script>
 import base from '@/helpers/base-url'
 import numberComma from '@/helpers/number-comma'
+import ContentComponent from '@/mixins/ContentComponent'
 
 export default {
   data() {
@@ -28,10 +29,7 @@ export default {
       return numberComma(this.wordSize)
     }
   },
-  components: {
-    Content: () => import('@/components/ui/Content'),
-    ContentLoading: () => import('@/components/ui/ContentLoading')
-  },
+  mixins: [ContentComponent],
   async created() {
     try {
       const url =

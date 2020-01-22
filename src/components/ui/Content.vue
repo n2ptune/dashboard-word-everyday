@@ -1,5 +1,7 @@
 <template>
-  <div class="p-3 bg-white rounded-lg shadow-lg m-2">
+  <div
+    class="p-3 bg-white rounded-lg shadow-lg mx-4 mb-8 flex-auto lg:flex-initial"
+  >
     <slot name="header" v-if="!handler">
       <p class="text-sm text-gray-600 font-bold">
         {{ title }}
@@ -16,7 +18,8 @@ export default {
       type: String
     },
     handler: {
-      required: true
+      default: false,
+      required: false
     }
   }
 }
