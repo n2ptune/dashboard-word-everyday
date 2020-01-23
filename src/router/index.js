@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import WordManagement from '@/views/WordManagement.vue'
+import Login from '@/views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,15 @@ const routes = [
     path: '/word',
     name: 'word-management',
     component: WordManagement
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    props: true,
+    meta: {
+      loginLayout: true
+    }
   }
 ]
 

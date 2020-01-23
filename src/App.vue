@@ -1,11 +1,16 @@
 <template>
-  <div class="root font-display">
-    <SideBar />
-    <Header />
-    <router-view
-      class="ml-0 md:ml-56 bg-gray-200 h-screen overflow-y-auto pt-16"
-      :class="isViewSidebar ? '' : 'ml-f0'"
-    />
+  <div class="font-display">
+    <div class="root" v-if="!$route.meta.loginLayout">
+      <SideBar />
+      <Header />
+      <router-view
+        class="ml-0 md:ml-56 bg-gray-200 h-screen overflow-y-auto pt-16"
+        :class="isViewSidebar ? '' : 'ml-f0'"
+      />
+    </div>
+    <div class="login-layout-root" v-else>
+      <router-view />
+    </div>
   </div>
 </template>
 
