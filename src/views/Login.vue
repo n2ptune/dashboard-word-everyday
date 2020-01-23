@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import firebase from '@/plugins/firebase'
+// import firebase from '@/plugins/firebase'
 
 export default {
   data() {
@@ -44,9 +44,6 @@ export default {
   },
   components: {
     LoginForm: () => import('@/components/ui/LoginForm')
-  },
-  created() {
-    console.log(firebase.auth())
   }
 }
 </script>
