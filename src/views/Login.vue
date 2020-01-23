@@ -4,7 +4,7 @@
     :class="loginType ? 'yw' : 'bl'"
   >
     <div
-      class="w-11/12 h-auto sm:w-2/3 md:w-2/4 lg:w-4/12 xl:w-96 bg-white rounded-lg shadow-2xl py-8 px-4"
+      class="w-11/12 h-auto sm:w-2/3 md:w-2/4 lg:w-4/12 xl:w-96 bg-white rounded-lg shadow-2xl py-8 px-4 z-10"
     >
       <LoginForm :type="loginType">
         <template #footer>
@@ -30,6 +30,7 @@
         </template>
       </LoginForm>
     </div>
+    <BubbleLogo />
   </div>
 </template>
 
@@ -43,7 +44,8 @@ export default {
     }
   },
   components: {
-    LoginForm: () => import('@/components/ui/LoginForm')
+    LoginForm: () => import('@/components/ui/LoginForm'),
+    BubbleLogo: () => import('@/components/ui/BubbleLogo')
   }
 }
 </script>

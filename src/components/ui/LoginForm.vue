@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col z-10">
     <slot name="header">
       <div class="mx-auto text-gray-800 text-lg">
         이메일로 {{ textWithType }}하기

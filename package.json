@@ -15,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "core-js": "^3.4.4",
     "firebase": "^7.7.0",
+    "perlin-simplex": "^0.0.3",
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.10",
     "vue-loading-spinner": "^1.0.11",

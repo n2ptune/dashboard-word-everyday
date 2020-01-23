@@ -6739,6 +6739,11 @@ performance-now@^2.1.0:
   resolved "https://registry.npm.taobao.org/performance-now/download/performance-now-2.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fperformance-now%2Fdownload%2Fperformance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
+perlin-simplex@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/perlin-simplex/-/perlin-simplex-0.0.3.tgz#4c2a6aa52ab93b980daa9e2a95bd4dadf7e9f81c"
+  integrity sha512-fhLYrvCVxYlvStYUCZ2z0pWkrJX+PcfRvtTRbvegN3GxIEiOPmBbFFr0Uk2MJxqmjVrgnHuFQBcmyDQJ/kMp/w==
+
 pify@^2.0.0:
   version "2.3.0"
   resolved "https://registry.npm.taobao.org/pify/download/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
