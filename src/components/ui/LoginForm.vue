@@ -57,9 +57,9 @@ export default {
     }
   },
   methods: {
-    // test(event) {
-    // console.log(event, this.user.mail, this.user.pw, this.textWithType)
-    // }
+    test(event) {
+      return event
+    }
   }
 }
 </script>
