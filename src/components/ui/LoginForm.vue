@@ -7,12 +7,16 @@
     </slot>
     <slot name="default" />
     <slot name="body">
-      <div class="title">Email</div>
+      <div class="title">
+        Email{{ user.state ? '' : '(올바른 이메일 형식이 아닙니다.)' }}
+      </div>
       <input
         v-model="user.mail"
         type="text"
         placeholder="Enter your email"
         class="input"
+        :class="user.state ? '' : 'fail'"
+        @input="user.state ? null : (user.state = !user.state)"
         @keydown.enter="test"
       />
       <div class="title">Password</div>
@@ -41,13 +45,16 @@
 </template>
 
 <script>
+import firebase from '@/plugins/firebase'
+
 export default {
   props: ['type'],
   data() {
     return {
       user: {
         mail: null,
-        pw: null
+        pw: null,
+        state: true
       }
     }
   },
@@ -57,8 +64,25 @@ export default {
     }
   },
   methods: {
-    test(event) {
-      return event
+    async test() {
+      await firebase
+        .auth()
+        .signInWithEmailAndPassword(this.user.mail, this.user.pw)
+        .catch(error => {
+          if (error.code === 'auth/invalid-email') {
+            this.user.state = false
+          }
+        })
+      try {
+        await firebase
+          .auth()
+          .signInWithEmailAndPassword(this.user.mail, this.user.pw)
+        this.$router.push('/')
+      } catch (e) {
+        if (e.code === 'auth/invalid-email') {
+          this.user.state = false
+        }
+      }
     }
   }
 }
@@ -73,5 +97,8 @@ export default {
 }
 .input:focus {
   outline: none;
+}
+.input.fail {
+  @apply border-red-500 border-2;
 }
 </style>

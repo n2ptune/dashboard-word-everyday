@@ -1,7 +1,6 @@
 <template>
   <div
     class="fixed flex items-center ml-0 md:ml-56 top-0 shadow bg-white w-full h-12 flex-wrap flex-column"
-    :class="isViewSidebar ? '' : 'ml-f0'"
   >
     <div class="px-3">
       <font-awesome-icon

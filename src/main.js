@@ -3,6 +3,7 @@ import './plugins/axios'
 import App from './App.vue'
 import store from './store'
 import router from './router'
+import firebase from '@/plugins/firebase'
 
 import '@/assets/style/index.css'
 
@@ -21,6 +22,8 @@ library.add(faUsersCog, faElementor, faArrowLeft, faArrowRight)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
+
+firebase.auth().setPersistence('session')
 
 new Vue({
   store,
