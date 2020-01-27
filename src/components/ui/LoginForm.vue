@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import firebase from '@/plugins/firebase'
+import { mapActions } from 'vuex'
 
 export default {
   props: ['type'],
@@ -64,24 +64,18 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      loginToFirebase: 'auth/login'
+    }),
     async test() {
-      await firebase
-        .auth()
-        .signInWithEmailAndPassword(this.user.mail, this.user.pw)
-        .catch(error => {
-          if (error.code === 'auth/invalid-email') {
-            this.user.state = false
-          }
-        })
       try {
-        await firebase
-          .auth()
-          .signInWithEmailAndPassword(this.user.mail, this.user.pw)
+        await this.loginToFirebase({
+          email: this.user.mail,
+          pw: this.user.pw
+        })
         this.$router.push('/')
       } catch (e) {
-        if (e.code === 'auth/invalid-email') {
-          this.user.state = false
-        }
+        console.error('error')
       }
     }
   }

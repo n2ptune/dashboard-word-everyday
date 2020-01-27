@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden md:block fixed h-screen left-0 top-0 w-56 bg-gray-800">
+  <aside class="fixed h-screen left-0 top-0 w-56 bg-gray-800">
     <div class="relative mt-3">
       <ul>
         <li

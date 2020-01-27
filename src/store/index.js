@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import authModule from '@/store/module/auth'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    isViewSidebar: true
-  },
-  mutations: {
-    handleViewSidebar(state) {
-      state.isViewSidebar = !state.isViewSidebar
-    }
-  },
+  state: {},
+  mutations: {},
   actions: {},
-  modules: {}
+  modules: {
+    auth: {
+      namespaced: true,
+      ...authModule
+    }
+  }
 })

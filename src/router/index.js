@@ -4,6 +4,7 @@ import Home from '@/views/Home.vue'
 import WordManagement from '@/views/WordManagement.vue'
 import Login from '@/views/Login.vue'
 import firebase from '@/plugins/firebase'
+import store from '@/store/index'
 
 Vue.use(VueRouter)
 
@@ -43,13 +44,17 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.auth)) {
-    firebase.auth().onAuthStateChanged(user => {
-      if (!user) {
-        next({
-          path: '/login'
-        })
-      } else {
+    firebase.auth().onAuthStateChanged(async user => {
+      if (store.getters['auth/getAccount']) {
         next()
+      } else {
+        try {
+          const token = await user.getIdToken()
+          store.dispatch('auth/loginWithToken', token)
+          next()
+        } catch (e) {
+          next('/login')
+        }
       }
     })
   } else {
