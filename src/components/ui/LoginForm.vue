@@ -75,7 +75,10 @@ export default {
         })
         this.$router.push('/')
       } catch (e) {
-        console.error('error')
+        /**
+         * @Todo Error handling with show like modal
+         */
+        // console.error('error')
       }
     }
   }
