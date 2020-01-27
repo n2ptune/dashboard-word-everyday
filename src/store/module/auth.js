@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import firebase from '@/plugins/firebase'
 import axios from 'axios'
 import base from '@/helpers/base-url'
