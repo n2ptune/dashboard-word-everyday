@@ -31,13 +31,19 @@
         type="submit"
         @click="test"
         class="py-3 focus:outline-none rounded-lg"
+        :disabled="logging"
         :class="
           this.type
             ? 'bg-yellow-300 hover:bg-yellow-400'
             : 'bg-blue-300 hover:bg-blue-400'
         "
       >
-        {{ textWithType }}
+        {{ !logging ? textWithType : '' }}
+        <LoadingSpinner
+          v-if="logging"
+          class="mx-auto"
+          :style="{ width: '30px', height: '30px' }"
+        />
       </button>
     </slot>
     <slot name="footer"></slot>
@@ -46,8 +52,12 @@
 
 <script>
 import { mapActions } from 'vuex'
+import { Circle as Spinner } from 'vue-loading-spinner'
 
 export default {
+  components: {
+    LoadingSpinner: Spinner
+  },
   props: ['type'],
   data() {
     return {
@@ -55,7 +65,8 @@ export default {
         mail: null,
         pw: null,
         state: true
-      }
+      },
+      logging: false
     }
   },
   computed: {
@@ -68,6 +79,7 @@ export default {
       loginToFirebase: 'auth/login'
     }),
     async test() {
+      this.logging = !this.logging
       try {
         await this.loginToFirebase({
           email: this.user.mail,
@@ -78,8 +90,8 @@ export default {
         /**
          * @Todo Error handling with show like modal
          */
-        // console.error('error')
       }
+      this.logging = !this.logging
     }
   }
 }
